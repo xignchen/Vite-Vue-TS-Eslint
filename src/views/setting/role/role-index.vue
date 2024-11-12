@@ -1,16 +1,16 @@
 <script setup lang="ts">
-import {reactive, ref} from "vue"
-import {getRoleList} from "./api.ts"
-import RoleDrawer from "./role-drawer.vue"
-import {ElMessage} from "element-plus"
+import {reactive, ref} from 'vue'
+import {getRoleList} from './api.ts'
+import RoleDrawer from './role-drawer.vue'
+import {ElMessage} from 'element-plus'
 
 const formInline = reactive({
-    roleName: ""
+    roleName: ''
 })
 
 const tableData = ref([])
 const drawerVisible = ref(false)
-const drawerTitle = ref("")
+const drawerTitle = ref('')
 const drawerFormData = ref({})
 
 const handleSearch = () => {
@@ -23,7 +23,7 @@ const handleSearch = () => {
 const handleEdit = (row: object) => {
     // 处理编辑逻辑
     drawerVisible.value = true
-    drawerTitle.value = ""
+    drawerTitle.value = ''
     drawerFormData.value = row
 }
 
@@ -34,7 +34,7 @@ const handleDelete = (row: object) => {
 
 const addRole = () => {
     drawerVisible.value = true
-    drawerTitle.value = "新增角色"
+    drawerTitle.value = '新增角色'
     drawerFormData.value = {}
 }
 

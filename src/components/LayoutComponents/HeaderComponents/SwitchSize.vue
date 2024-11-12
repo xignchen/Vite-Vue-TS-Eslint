@@ -1,9 +1,9 @@
 <script setup lang="ts">
 
-import store from "../../../store"
+import store from '../../../store'
 
 const handleCommand = (command: string) => {
-    store.dispatch("updateSize", command)
+    store.dispatch('updateSize', command)
 }
 </script>
 

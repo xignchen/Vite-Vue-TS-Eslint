@@ -1,7 +1,7 @@
 <script setup lang="ts">
 
-import {toRef} from "vue"
-import {ElMessage} from "element-plus";
+import {toRef} from 'vue'
+import {ElMessage} from 'element-plus';
 
 const props = defineProps({
     drawerVisible: {
@@ -10,7 +10,7 @@ const props = defineProps({
     },
     drawerTitle: {
         type: String,
-        default: ""
+        default: ''
     },
     drawerFormData: {
         type: Object,
@@ -18,19 +18,19 @@ const props = defineProps({
     }
 })
 
-const showDrawer = toRef(props, "drawerVisible")
+const showDrawer = toRef(props, 'drawerVisible')
 
-const form = toRef(props, "drawerFormData")
+const form = toRef(props, 'drawerFormData')
 
-const emit = defineEmits(["update:drawerVisible"])
+const emit = defineEmits(['update:drawerVisible'])
 
 const submitForm = () => {
-    ElMessage.success("提交成功")
+    ElMessage.success('提交成功')
 }
 
 const handleClose = () => {
     showDrawer.value = false
-    emit("update:drawerVisible", false)
+    emit('update:drawerVisible', false)
 }
 </script>
 

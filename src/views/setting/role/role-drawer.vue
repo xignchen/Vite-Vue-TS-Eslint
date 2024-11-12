@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import {ref, toRef, onMounted} from "vue"
-import {getMenuList} from "./api.ts"
+import {ref, toRef, onMounted} from 'vue'
+import {getMenuList} from './api.ts'
 
 const props = defineProps({
     drawerVisible: {
@@ -9,7 +9,7 @@ const props = defineProps({
     },
     drawerTitle: {
         type: String,
-        default: ""
+        default: ''
     },
     drawerFormData: {
         type: Object,
@@ -17,9 +17,9 @@ const props = defineProps({
     }
 })
 
-const showDrawer = toRef(props, "drawerVisible")
-const form = toRef(props, "drawerFormData")
-const emit = defineEmits(["update:drawerVisible"])
+const showDrawer = toRef(props, 'drawerVisible')
+const form = toRef(props, 'drawerFormData')
+const emit = defineEmits(['update:drawerVisible'])
 const treeData = ref([])
 
 const getMenuTree = () => {
@@ -35,13 +35,13 @@ onMounted(() => {
 const submitForm = () => {
     // console.log(form.value)
     showDrawer.value = false
-    emit("update:drawerVisible", false)
+    emit('update:drawerVisible', false)
 }
 
 // 关闭抽屉
 const closeDrawer = () => {
     showDrawer.value = false
-    emit("update:drawerVisible", false)
+    emit('update:drawerVisible', false)
 }
 </script>
 

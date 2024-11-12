@@ -1,5 +1,4 @@
-import axios from "../../../utils/request/request.ts"
-export const getUserList = (params) => {
+export const getUserList = () => {
   // return axios.get('/user/list', { params })
     return Promise.resolve({
         code: 1,

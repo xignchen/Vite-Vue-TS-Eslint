@@ -1,5 +1,5 @@
 <script setup lang="ts" name="menuItem">
-import {toRef} from "vue"
+import {toRef} from 'vue'
 
 const props = defineProps({
     item: {
@@ -8,7 +8,7 @@ const props = defineProps({
     },
 })
 
-const itemMenus = toRef(props, "item")
+const itemMenus = toRef(props, 'item')
 // console.log(item)
 </script>
 

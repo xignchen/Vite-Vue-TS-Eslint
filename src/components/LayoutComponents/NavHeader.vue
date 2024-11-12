@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import store from "../../store"
-import SettingDropdown from "./HeaderComponents/SettingDropdown.vue";
-import DarkSwitch from "./HeaderComponents/DarkSwitch.vue";
-import NavBreadcrumb from "./HeaderComponents/NavBreadcrumb.vue";
-import MenuCollapse from "./HeaderComponents/MenuCollapse.vue";
-import NavTabs from "./HeaderComponents/NavTabs.vue";
-import SwitchLanguage from "./HeaderComponents/SwitchLanguage.vue";
-import SwitchSize from "./HeaderComponents/SwitchSize.vue";
+import store from '../../store'
+import SettingDropdown from './HeaderComponents/SettingDropdown.vue';
+import DarkSwitch from './HeaderComponents/DarkSwitch.vue';
+import NavBreadcrumb from './HeaderComponents/NavBreadcrumb.vue';
+import MenuCollapse from './HeaderComponents/MenuCollapse.vue';
+import NavTabs from './HeaderComponents/NavTabs.vue';
+import SwitchLanguage from './HeaderComponents/SwitchLanguage.vue';
+import SwitchSize from './HeaderComponents/SwitchSize.vue';
 </script>
 
 <template>

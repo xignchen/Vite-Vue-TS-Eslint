@@ -1,10 +1,8 @@
-import axios from "../../../utils/request/request.ts";
-
 export const getMessageList = () => {
   // return axios.get("/message/list");
     return Promise.resolve({
         code: 1,
-        message: "success",
+        message: 'success',
         total: 1,
         data: [
             {

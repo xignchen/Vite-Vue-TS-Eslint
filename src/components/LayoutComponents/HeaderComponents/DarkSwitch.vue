@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import {computed, ref} from "vue"
-import {Moon, Sunny} from "@element-plus/icons-vue"
-import store from "../../../store"
+import {computed, ref} from 'vue'
+import {Moon, Sunny} from '@element-plus/icons-vue'
+import store from '../../../store'
 
 const isDark = ref(
     computed(() => {
@@ -15,13 +15,13 @@ const changeDark = () => {
     //判断HTML标签是否有类名dark
     //当按钮为关闭时，设置根节点的className为'',当暗黑模式按钮开启时，根节点的className设置为'dark'
     if(isDark.value) {
-        html.className = ""
+        html.className = ''
     } else {
-        html.className = "dark"
+        html.className = 'dark'
     }
 
     //将isDark的值更新到vuex中
-    store.dispatch("updateIsDark", !isDark.value)
+    store.dispatch('updateIsDark', !isDark.value)
 }
 </script>
 

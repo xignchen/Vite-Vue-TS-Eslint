@@ -1,15 +1,15 @@
 <script setup lang="ts">
-import {ref, computed, useAttrs} from "vue"
-import * as Icons from "@element-plus/icons-vue"
+import {ref, computed, useAttrs} from 'vue'
+import * as Icons from '@element-plus/icons-vue'
 
 const props = defineProps({
     modelValue: {
         type: String,
-        default: ""
+        default: ''
     },
     prefixIcon: {
         type: String,
-        default: "Search"
+        default: 'Search'
     },
     selectBind: Object,
     isShowSearch: {
@@ -21,7 +21,7 @@ const props = defineProps({
         default: true
     }
 })
-const emit = defineEmits(["update:modelValue", "select"])
+const emit = defineEmits(['update:modelValue', 'select'])
 // v-model简写
 let valueIcon = computed({
     get() {
@@ -29,19 +29,19 @@ let valueIcon = computed({
     },
     set(val) {
         // console.log("v-model简写", val);
-        emit("update:modelValue", val)
+        emit('update:modelValue', val)
     }
 })
 const $attrs: any = useAttrs()
 const attrs = computed(() => {
     const selectBind = {
-        "prefix-icon": customIcons[props.prefixIcon],
-        placeholder: "请选择图标",
-        dialogTitle: "请选择图标",
-        searchPlaceholder: "搜索图标",
-        emptyDescription: "未搜索到您要找的图标",
+        'prefix-icon': customIcons[props.prefixIcon],
+        placeholder: '请选择图标',
+        dialogTitle: '请选择图标',
+        searchPlaceholder: '搜索图标',
+        emptyDescription: '未搜索到您要找的图标',
         clearable: true,
-        width: "50%",
+        width: '50%',
         ...props.selectBind
     }
     return {...$attrs, ...selectBind}
@@ -53,20 +53,20 @@ const dialogVisible = ref(false)
 const selectIcon = (item: any) => {
     dialogVisible.value = false
     valueIcon.value = item.name
-    emit("update:modelValue", item.name)
-    emit("select", item.name)
+    emit('update:modelValue', item.name)
+    emit('select', item.name)
 }
 
 // 清空图标
 const inputRef = ref()
 const clearIcon = () => {
-    valueIcon.value = ""
-    emit("update:modelValue", "")
+    valueIcon.value = ''
+    emit('update:modelValue', '')
     setTimeout(() => inputRef.value.blur(), 0)
 }
 
 // 监听搜索框值
-const inputValue = ref("")
+const inputValue = ref('')
 const customIcons: { [key: string]: any } = Icons
 const iconsList = computed((): { [key: string]: any } => {
     if (!inputValue.value) {

@@ -1,29 +1,29 @@
 <script setup lang="ts">
-import {User, Unlock} from "@element-plus/icons-vue"
-import {reactive} from "vue"
-import {useRouter} from "vue-router"
-import {ElMessage} from "element-plus"
-import store from "../../store"
+import {User, Unlock} from '@element-plus/icons-vue'
+import {reactive} from 'vue'
+import {useRouter} from 'vue-router'
+import {ElMessage} from 'element-plus'
+import store from '../../store'
 
 const router = useRouter()
 
 const loginForm = reactive({
-    username: "",
-    password: "",
+    username: '',
+    password: '',
 })
 
 const doLogin = () => {
     console.log(loginForm)
-    window.localStorage.setItem("token", "123456")
-    store.dispatch("updateUserInfo", {
+    window.localStorage.setItem('token', '123456')
+    store.dispatch('updateUserInfo', {
         username: loginForm.username,
         password: loginForm.password,
-        name: "管理员"
+        name: '管理员'
     })
-    ElMessage.success("登录成功")
+    ElMessage.success('登录成功')
     // 登录成功后跳转到首页
     setTimeout(() => {
-        router.push("/layout")
+        router.push('/layout')
     }, 1000)
 }
 </script>

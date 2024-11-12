@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import {onMounted} from "vue"
+import {onMounted} from 'vue'
 import {
     getEchartsData1,
     getEchartsData2,
@@ -14,7 +14,7 @@ import {
     getEchartsData11,
     getEchartsData12,
     getEchartsData13
-} from "./home-index.ts"
+} from './home-index.ts'
 
 onMounted(() => {
     getEchartsData1()

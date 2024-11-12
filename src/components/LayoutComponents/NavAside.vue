@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import AsideHeader from "./AsideComponents/AsideHeader.vue";
-import AsideMenuTree from "./AsideComponents/AsideMenuTree.vue";
+import AsideHeader from './AsideComponents/AsideHeader.vue'
+import AsideMenuTree from './AsideComponents/AsideMenuTree.vue'
 </script>
 
 <template>

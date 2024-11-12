@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import store from "../../../store"
+import store from '../../../store'
 
 const handleCommand = (command: string) => {
-    store.dispatch("updateLanguage", command)
+    store.dispatch('updateLanguage', command)
 }
 </script>
 

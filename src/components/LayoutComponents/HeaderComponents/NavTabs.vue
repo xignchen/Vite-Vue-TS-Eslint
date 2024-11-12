@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import {computed, watch} from "vue"
-import draggable from "vuedraggable"
-import store from "../../../store"
-import {useRoute, useRouter} from "vue-router"
+import {computed, watch} from 'vue'
+import draggable from 'vuedraggable'
+import store from '../../../store'
+import {useRoute, useRouter} from 'vue-router'
 
 const route = useRoute()
 const router = useRouter()
@@ -21,7 +21,7 @@ const tabsItem = computed(() => {
 
 watch(route, (newVal) => {
     // console.log(newVal)
-    if (newVal.path === "/login") {
+    if (newVal.path === '/login') {
         return
     }
     if (newVal.query) {
@@ -30,7 +30,7 @@ watch(route, (newVal) => {
         router.push({path: newVal.path})
     }
     // 判断当前路由是否已经添加到标签页中
-    if (!tabsItem.value.some((item) => item.path === newVal.path)) {
+    if (!tabsItem.value.some(item => item.path === newVal.path)) {
         // 没有则添加
         // 添加到标签页数组中
         tabsItem.value.push({
@@ -41,14 +41,14 @@ watch(route, (newVal) => {
         })
     } else {
         // 更新当前标签页的索引
-        tabsItem.value.forEach((item) => {
+        tabsItem.value.forEach(item => {
             if (item.path === newVal.path && item.query !== newVal.query) {
                 item.query = newVal.query
             }
         })
     }
     // 更新标签页数组
-    store.dispatch("updateTabs", tabsItem.value)
+    store.dispatch('updateTabs', tabsItem.value)
 })
 
 const removeTabs = (item) => {
@@ -58,7 +58,7 @@ const removeTabs = (item) => {
     if (item.path === route.path) {
         // 不是最后一个
         // 获取当前关闭的标签页的索引
-        let index = tabsItem.value.findIndex((item) => item.path === route.path)
+        let index = tabsItem.value.findIndex(item => item.path === route.path)
         // 获取当前关闭的标签页的下一个标签页
         let nextItem = tabsItem.value[index - 1]
         // console.log(nextItem)
@@ -71,19 +71,19 @@ const removeTabs = (item) => {
     }
     // 删除当前关闭的标签页
     tabsItem.value.splice(tabsItem.value.indexOf(item), 1)
-    console.log(tabsItem.value)
-    store.dispatch("updateTabs", tabsItem.value)
+    // console.log(tabsItem.value)
+    store.dispatch('updateTabs', tabsItem.value)
 }
 
 //拖拽开始的事件
 const onStart = () => {
-    console.log("开始拖拽")
+    // console.log("开始拖拽")
 }
 
 //拖拽结束的事件
 const onEnd = () => {
-    console.log("结束拖拽")
-    store.dispatch("updateTabs", tabsItem.value)
+    // console.log("结束拖拽")
+    store.dispatch('updateTabs', tabsItem.value)
 }
 </script>
 

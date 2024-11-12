@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import {onMounted, ref, watch} from "vue"
-import {useRoute} from "vue-router"
+import {onMounted, ref, watch} from 'vue'
+import {useRoute} from 'vue-router'
 
 const route = useRoute()
 
@@ -18,7 +18,7 @@ const calcBreads = () => {
             if (i === route.matched.filter((v) => v.meta.title).length) {
                 return {to: v.path, title: v.meta.title} //提取path和title生成我们需要的数据格式
             } else {
-                return {to: "", title: v.meta.title} //提取path和title生成我们需要的数据格式
+                return {to: '', title: v.meta.title} //提取path和title生成我们需要的数据格式
             }
         })
 

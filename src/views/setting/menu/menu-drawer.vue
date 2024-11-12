@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import {ref, toRef, onMounted} from "vue"
-import {getMenuList} from "./api.ts"
-import ElIconPicker from "../../../components/ElIconPicker/ElIconPicker.vue"
+import {ref, toRef, onMounted} from 'vue'
+import {getMenuList} from './api.ts'
+import ElIconPicker from '../../../components/ElIconPicker/ElIconPicker.vue'
 
 const props = defineProps({
     drawerVisible: {
@@ -10,18 +10,18 @@ const props = defineProps({
     },
     drawerTitle: {
         type: String,
-        default: ""
+        default: ''
     },
     drawerFormData: {
         type: Object,
         default: () => ({})
     }
 })
-const showDrawer = toRef(props, "drawerVisible")
-const form = toRef(props, "drawerFormData")
+const showDrawer = toRef(props, 'drawerVisible')
+const form = toRef(props, 'drawerFormData')
 const menuOptions = ref([])
 
-const emit = defineEmits(["update:drawerVisible"])
+const emit = defineEmits(['update:drawerVisible'])
 
 onMounted(() => {
     getMenuItems()
@@ -36,13 +36,13 @@ const getMenuItems = () => {
 const submitForm = () => {
     // 处理表单提交逻辑
     showDrawer.value = false
-    emit("update:drawerVisible", false)
+    emit('update:drawerVisible', false)
 }
 
 // 关闭抽屉
 const closeDrawer = () => {
     showDrawer.value = false
-    emit("update:drawerVisible", false)
+    emit('update:drawerVisible', false)
 }
 </script>
 

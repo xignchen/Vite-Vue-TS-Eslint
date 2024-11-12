@@ -1,16 +1,16 @@
 <script setup lang="ts">
-import {reactive, ref} from "vue"
-import {getMenuList} from "./api.ts"
-import MenuDrawer from "./menu-drawer.vue"
-import {ElMessage} from "element-plus"
+import {reactive, ref} from 'vue'
+import {getMenuList} from './api.ts'
+import MenuDrawer from './menu-drawer.vue'
+import {ElMessage} from 'element-plus'
 
 const formInline = reactive({
-    menuName: ""
+    menuName: ''
 })
 
 const tableData = ref([])
 const drawerVisible = ref(false)
-const drawerTitle = ref("")
+const drawerTitle = ref('')
 const drawerFormData = ref({})
 
 const handleSearch = () => {
@@ -23,7 +23,7 @@ const handleSearch = () => {
 const handleEdit = (row: object) => {
     // 处理编辑逻辑
     drawerVisible.value = true
-    drawerTitle.value = "编辑菜单"
+    drawerTitle.value = '编辑菜单'
     drawerFormData.value = row
 }
 
@@ -34,7 +34,7 @@ const handleDelete = (row: object) => {
 
 const addMenu = () => {
     drawerVisible.value = true
-    drawerTitle.value = "新增菜单"
+    drawerTitle.value = '新增菜单'
     drawerFormData.value = {}
 }
 

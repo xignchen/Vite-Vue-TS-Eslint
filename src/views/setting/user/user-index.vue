@@ -1,18 +1,18 @@
 <script setup lang="ts">
-import {reactive, ref} from "vue"
-import {getUserList} from "./api.ts"
-import UserDrawer from "./user-drawer.vue"
+import {reactive, ref} from 'vue'
+import {getUserList} from './api.ts'
+import UserDrawer from './user-drawer.vue'
 
 const formInline = reactive({
-    username: "",
-    name: "",
-    idCard: "",
-    phone: ""
+    username: '',
+    name: '',
+    idCard: '',
+    phone: ''
 })
 
 const tableData = ref([])
 const drawerVisible = ref(false)
-const drawerTitle = ref("")
+const drawerTitle = ref('')
 const drawerFormData = ref({})
 const currentPage = ref(1)
 const pageSize = ref(10)
@@ -47,7 +47,7 @@ const handleSizeChange = (val: number) => {
 const handleEdit = (row: object) => {
     // 处理编辑逻辑
     drawerVisible.value = true
-    drawerTitle.value = "编辑用户"
+    drawerTitle.value = '编辑用户'
     drawerFormData.value = row
 }
 

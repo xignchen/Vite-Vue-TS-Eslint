@@ -1,6 +1,4 @@
-import axios from "../../../utils/request/request.ts";
-
-export const getRoleList = (params) => {
+export const getRoleList = () => {
     // return axios.get("/role/list", { params });
     return Promise.resolve({
         code: 1,
@@ -9,23 +7,23 @@ export const getRoleList = (params) => {
         data: [
             {
                 id: 1,
-                name: "管理员",
+                name: '管理员',
                 num: 0,
                 status: 1,
-                description: "拥有所有权限",
+                description: '拥有所有权限',
             },
             {
                 id: 2,
-                name: "普通用户",
+                name: '普通用户',
                 num: 1,
                 status: 1,
-                description: "拥有基础菜单权限",
+                description: '拥有基础菜单权限',
             }
         ]
     })
 }
 
-export const getMenuList = (params) => {
+export const getMenuList = () => {
     // return axios.get("/menu/list", { params });
     return Promise.resolve({
         code: 1,

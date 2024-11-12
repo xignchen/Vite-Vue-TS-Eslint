@@ -1,16 +1,16 @@
 <script setup lang="ts">
-import store from "../../../store"
+import store from '../../../store'
 
 const changeCollapse = () => {
     let isCollapse = store.state.isCollapse
-    store.dispatch("updateIsCollapse", !isCollapse)
+    store.dispatch('updateIsCollapse', !isCollapse)
 }
 </script>
 
 <template>
     <svg
         @click="changeCollapse"
-        style="cursor: pointer transition: all 0.3ms"
+        style="cursor: pointer; transition: all 0.3ms;"
         t="1725871128542"
         class="icon"
         viewBox="0 0 1024 1024"

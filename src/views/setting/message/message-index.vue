@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import {reactive, ref} from "vue"
-import {getMessageList} from "./api.ts"
-import {ElMessage} from "element-plus";
+import {reactive, ref} from 'vue'
+import {getMessageList} from './api.ts'
+import {ElMessage} from 'element-plus';
 
 const formInline = reactive({
-    content: ""
+    content: ''
 })
 
 const tableData = ref([])
@@ -37,7 +37,7 @@ const handleSizeChange = (val: number) => {
 }
 
 const addMessage = () => {
-    ElMessage.success("发送消息")
+    ElMessage.success('发送消息')
 }
 </script>
 

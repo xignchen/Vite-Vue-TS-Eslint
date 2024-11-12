@@ -1,22 +1,22 @@
 <script setup lang="ts">
-import {ref} from "vue"
-import {Lock, Setting, SwitchButton, User} from "@element-plus/icons-vue"
-import {loginOut} from "@/utils/common.ts"
-import SettingDrawer from "./DialogComponents/SettingDrawer.vue"
+import {ref} from 'vue'
+import {Lock, Setting, SwitchButton, User} from '@element-plus/icons-vue'
+import {loginOut} from '@/utils/common.ts'
+import SettingDrawer from './DialogComponents/SettingDrawer.vue'
 
 const drawerVisible = ref(false)
 
-const handleCommand = (e) => {
+const handleCommand = (e: any) => {
     switch (e) {
-        case "a":
+        case 'a':
             break
-        case "b":
+        case 'b':
             break
-        case "c":
+        case 'c':
             drawerVisible.value = true
             break
         // 退出登录
-        case "d":
+        case 'd':
             loginOut()
             break
     }

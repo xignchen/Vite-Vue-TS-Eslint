@@ -1,6 +1,6 @@
 <script setup lang="ts">
 
-import {toRef} from "vue"
+import {toRef} from 'vue'
 
 const props = defineProps({
     drawerVisible: {
@@ -9,7 +9,7 @@ const props = defineProps({
     },
 })
 
-const showDrawer = toRef(props, "drawerVisible")
+const showDrawer = toRef(props, 'drawerVisible')
 </script>
 
 <template>

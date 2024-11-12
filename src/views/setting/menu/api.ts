@@ -1,6 +1,4 @@
-import axios from "../../../utils/request/request.ts"
-
-export const getMenuList = (params) => {
+export const getMenuList = () => {
     // return axios.get("/menu/list", { params })
     return Promise.resolve({
         code: 1,
