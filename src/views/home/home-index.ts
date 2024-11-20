@@ -785,9 +785,9 @@ export const getEchartsData5 = () => {
 export const getEchartsData6 = () => {
     const chartDom = document.getElementById('chart6');
     const myChart = echarts.init(chartDom);
-    var salvProName = ["安徽省", "河南省", "浙江省", "湖北省", "贵州省", "江西省", "江苏省", "四川省", "云南省", "湖南省"];
-    var salvProValue = [239, 181, 154, 144, 135, 117, 74, 72, 67, 55];
-    var salvProMax = [];//背景按最大值
+    let salvProName = ["安徽省", "河南省", "浙江省", "湖北省", "贵州省", "江西省", "江苏省", "四川省", "云南省", "湖南省"];
+    let salvProValue = [239, 181, 154, 144, 135, 117, 74, 72, 67, 55];
+    let salvProMax = [];//背景按最大值
     for (let i = 0; i < salvProValue.length; i++) {
         salvProMax.push(salvProValue[0])
     }
@@ -1233,7 +1233,7 @@ export const getEchartsData9 = () => {
                         cx: api.getWidth() / 2,
                         cy: api.getHeight() / 2,
                         r: Math.min(api.getWidth(), api.getHeight()) / 2 * 0.6,
-                        startAngle: (0 + angle) * Math.PI / 180,
+                        startAngle: (angle) * Math.PI / 180,
                         endAngle: (90 + angle) * Math.PI / 180
                     },
                     style: {
@@ -1745,16 +1745,16 @@ export const getEchartsData12 = () => {
                 axisLabel: {
                     //坐标轴刻度标签的相关设置
                     formatter: function (value) {
-                        var str = "";
-                        var num = 4; //每行显示字数
-                        var valLength = value.length; //该项x轴字数
-                        var rowNum = Math.ceil(valLength / num); // 行数
+                        let str = "";
+                        let num = 4; //每行显示字数
+                        let valLength = value.length; //该项x轴字数
+                        let rowNum = Math.ceil(valLength / num); // 行数
 
                         if (rowNum > 1) {
-                            for (var i = 0; i < rowNum; i++) {
-                                var temp = "";
-                                var start = i * num;
-                                var end = start + num;
+                            for (let i = 0; i < rowNum; i++) {
+                                let temp = "";
+                                let start = i * num;
+                                let end = start + num;
 
                                 temp = value.substring(start, end) + "\n";
                                 str += temp;
@@ -1965,7 +1965,7 @@ export const getEchartsData12 = () => {
 export const getEchartsData13 = () => {
     const chartDom = document.getElementById('chart13');
     const myChart = echarts.init(chartDom);
-    var data = [{
+    let data = [{
         'name': '短信',
         'value': 1369
     }, {

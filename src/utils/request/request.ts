@@ -1,13 +1,17 @@
 import axios from 'axios';
 import { ElMessage } from 'element-plus'
+import { getToken } from "../common.ts";
 
 axios.defaults.baseURL = 'https://api.github.com';
 axios.defaults.headers.post['Content-Type'] = 'application/json;charset=UTF-8';
 
+// 请求拦截器
 axios.interceptors.request.use(config => {
+    config.headers['token'] = getToken()
     return config;
 })
 
+// 响应拦截器
 axios.interceptors.response.use(response => {
     return response.data;
 }, error => {
@@ -31,7 +35,7 @@ axios.interceptors.response.use(response => {
                 message = '拒绝访问'
                 break
             case 404:
-                message = '请求错误,未找到该资源'
+                message = '请求接口不存在'
                 break
             case 500:
                 message = '服务器端出错'
@@ -40,9 +44,11 @@ axios.interceptors.response.use(response => {
                 message = `请求错误 [${status}]`
         }
         ElMessage.error(message)
-    } else {
+    } else if (error.request) {
         // 处理网络错误
-        ElMessage.error('连接服务器失败')
+        ElMessage.error('连接服务器失败！')
+    } else {
+        ElMessage.error('请求服务器错误！')
     }
     return Promise.reject(error)
 });

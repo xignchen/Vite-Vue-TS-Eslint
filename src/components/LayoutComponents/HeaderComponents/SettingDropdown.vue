@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import {ref} from 'vue'
 import {Lock, Setting, SwitchButton, User} from '@element-plus/icons-vue'
-import {loginOut} from '@/utils/common.ts'
+import {loginOut} from '../../../utils/common.ts'
 import SettingDrawer from './DialogComponents/SettingDrawer.vue'
 
 const drawerVisible = ref(false)

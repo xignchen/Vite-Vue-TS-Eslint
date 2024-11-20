@@ -5,7 +5,9 @@ const router = useRouter;
 // 退出登录
 export const loginOut = () => {
     localStorage.clear();
-    router.push('/login').then(r => r);
+    router.replace({
+        path: '/login'
+    });
 };
 
 // 获取token

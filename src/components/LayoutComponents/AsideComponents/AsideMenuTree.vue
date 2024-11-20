@@ -3,7 +3,7 @@ import {computed} from 'vue'
 import {useRoute} from 'vue-router'
 import MenuItem from './MenuComponents/MenuItem.vue'
 import store from '../../../store'
-import {menuItems} from '@/utils/menu'
+import {menuItems} from '../../../utils/menu'
 
 const route = useRoute()
 

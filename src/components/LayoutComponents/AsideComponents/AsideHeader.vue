@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import { computed } from 'vue';
-import store from '../../../store';
+import { computed } from 'vue'
+import store from '../../../store'
 
 const subTitle = computed(() => {
-  return store.state.subTitle;
-});
+  return store.state.subTitle
+})
 </script>
 
 <template>

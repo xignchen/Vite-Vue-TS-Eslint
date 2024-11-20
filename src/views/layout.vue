@@ -1,14 +1,14 @@
 <script setup lang="ts">
-import {onMounted} from 'vue';
-import NavAside from '../components/LayoutComponents/NavAside.vue';
-import NavHeader from '../components/LayoutComponents/NavHeader.vue';
-import NavMain from '../components/LayoutComponents/NavMain.vue';
-import NavFooter from '../components/LayoutComponents/NavFooter.vue';
-import WaterMark from '../components/WaterMark/WaterMark.vue';
+import {onMounted} from 'vue'
+import NavAside from '../components/LayoutComponents/NavAside.vue'
+import NavHeader from '../components/LayoutComponents/NavHeader.vue'
+import NavMain from '../components/LayoutComponents/NavMain.vue'
+import NavFooter from '../components/LayoutComponents/NavFooter.vue'
+import WaterMark from '../components/WaterMark/WaterMark.vue'
 
 // 页面加载时
 onMounted(() => {
-});
+})
 </script>
 
 <template>

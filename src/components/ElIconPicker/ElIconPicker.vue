@@ -28,7 +28,7 @@ let valueIcon = computed({
         return props.modelValue
     },
     set(val) {
-        // console.log("v-model简写", val);
+        // console.log("v-model简写", val)
         emit('update:modelValue', val)
     }
 })

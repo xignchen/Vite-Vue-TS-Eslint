@@ -1,11 +1,11 @@
 <script setup lang="ts">
 
-import {computed, ref} from 'vue';
-import store from '../../store';
+import {computed, ref} from 'vue'
+import store from '../../store'
 
 const text = ref(computed(() => {
     return store.state.userInfo.username
-}));
+}))
 </script>
 
 <template>
